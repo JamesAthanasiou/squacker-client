@@ -5,7 +5,7 @@
   },
   "proxies": {
     "/api": {
-      "origin": "https://squacker-server.herokuapp.com"
+      "origin": "https://squacker-server.herokuapp.com/api"
     }
   }
 }
