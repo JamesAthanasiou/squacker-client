@@ -49,13 +49,13 @@ const Main = props => {
         <Route 
           exact
           path='/users/:id/messages/new' 
-          component={ withAuth(<MessageForm />)} 
+          component={ withAuth(MessageForm)} 
         />
         {/* Unclear on how to pass props to a component wrapped in a HOC */}
         <Route 
           exact
           path='/users/:id/messages/:message_id/edit' 
-          component={ withAuth(<MessageForm />)} 
+          component={ withAuth(MessageForm)} 
         />
       </Switch>
     </div>
