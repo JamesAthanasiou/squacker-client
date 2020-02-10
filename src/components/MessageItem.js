@@ -9,7 +9,9 @@ const MessageItem = ({
   text, 
   username, 
   removeMessage, 
-  isCorrectUser
+  isCorrectUser,
+  user_id,
+  message_id
 }) => (
   <div>
     <li className='list-group-item'>
@@ -29,9 +31,14 @@ const MessageItem = ({
         </span>
         <p>{text}</p>
         {isCorrectUser && (
-          <a className='btn btn-danger' onClick={removeMessage}>
-            Delete
-          </a>
+          <div>
+            <Link to={`/users/${user_id}/messages/${message_id}/edit`} className='btn btn-warning'>
+              Edit
+            </Link>
+            <a className='btn btn-danger' onClick={removeMessage}>
+              Delete
+            </a>
+          </div>
         )}
 
       </div>

@@ -1,6 +1,6 @@
 // Routing logic
 import React from 'react'
-import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Homepage from '../components/Homepage';
 import AuthForm from '../components/AuthForm'; 
@@ -15,10 +15,7 @@ const Main = props => {
   const { authUser, errors, removeError, currentUser } = props;
   return (
     <div className='container'>
-      {/*switch renders the first matching route*/}
       <Switch>
-          {/* specifying exact means only match if the entire route matches, not just part */}
-          {/* rendering homepage and passing in props from react router */}
         <Route exact path='/' render={props => <Homepage currentUser={currentUser} {...props} />} />
         <Route exact path='/signin' render={props => {
           return(
@@ -49,10 +46,17 @@ const Main = props => {
             )
           }} 
         />
-        {/* Must prevent non users from accessing message form */}
         <Route 
-        path='/users/:id/messages/new' 
-        component={withAuth(MessageForm)} />
+          exact
+          path='/users/:id/messages/new' 
+          component={ withAuth(<MessageForm />)} 
+        />
+        {/* Unclear on how to pass props to a component wrapped in a HOC */}
+        <Route 
+          exact
+          path='/users/:id/messages/:message_id/edit' 
+          component={ withAuth(<MessageForm />)} 
+        />
       </Switch>
     </div>
   );

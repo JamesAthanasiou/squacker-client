@@ -16,6 +16,8 @@ class MessageList extends Component {
         text={m.text}
         username={m.user.username}
         profileImageUrl={m.user.profileImageUrl}
+        user_id={m.user._id}   
+        message_id={m._id}   
         // since this is being passed down must bind the value
         removeMessage={removeMessage.bind(this, m.user._id, m._id)}
         isCorrectUser={currentUser === m.user._id}
