@@ -83,13 +83,21 @@ ul.nav.navbar-nav li {
   cursor: pointer;
 }
 
-a.btn.btn-danger,
-a.btn.btn-danger:hover {
+.btn.btn-danger,
+.btn.btn-danger:hover {
   color: white;
   margin-left: 5px;
 }
 
-.btn-warning,
-.btn-warning:hover {
+.btn.btn-warning,
+.btn.btn-warning:hover {
   color: white;
+}
+
+.input-group-btn {
+  margin-left: 5px;
+}
+
+input{
+  margin-bottom: 8px;
 }

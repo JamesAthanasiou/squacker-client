@@ -72,18 +72,20 @@ class MessageForm extends Component {
             {this.props.errors.message}
           </div>
         )}
-        <input
-          type='text'
-          name='message'
-          className='form-control'
-          value={this.state.message}
-          onChange={this.handleChange}
-        />
-        <span className='input-group-btn'>
-          <button type='submit' className='btn btn-success pull-right'>
-            {this.props.buttonText}
-          </button>
-        </span>
+        <div className='input-group'>
+          <input
+            type='text'
+            name='message'
+            className='form-control'
+            value={this.state.message}
+            onChange={this.handleChange}
+          />
+          <span className='input-group-btn'>
+            <button type='submit' className='btn btn-success pull-right'>
+              {this.props.buttonText}
+            </button>
+          </span>
+        </div>
       </form>
     )
   }

@@ -35,9 +35,9 @@ const MessageItem = ({
             <Link to={`/users/${user_id}/messages/${message_id}/edit`} className='btn btn-warning'>
               Edit
             </Link>
-            <a className='btn btn-danger' onClick={removeMessage}>
+            <button className='btn btn-danger' onClick={removeMessage}>
               Delete
-            </a>
+            </button>
           </div>
         )}
 
