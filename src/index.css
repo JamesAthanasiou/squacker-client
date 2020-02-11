@@ -83,7 +83,7 @@ ul.nav.navbar-nav li {
   cursor: pointer;
 }
 
-a.btn.btn-dancer,
+a.btn.btn-danger,
 a.btn.btn-danger:hover {
   color: white;
 }
