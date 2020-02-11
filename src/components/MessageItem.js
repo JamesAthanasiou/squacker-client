@@ -32,9 +32,11 @@ const MessageItem = ({
         <p>{text}</p>
         {isCorrectUser && (
           <div>
+            {/*
             <Link to={`/users/${user_id}/messages/${message_id}/edit`} className='btn btn-warning'>
               Edit
             </Link>
+            */}
             <a className='btn btn-danger' onClick={removeMessage}>
               Delete
             </a>
