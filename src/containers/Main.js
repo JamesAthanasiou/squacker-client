@@ -13,6 +13,7 @@ const Main = props => {
   // can only pass redux actions into routes as props if also done in mapDispatchToProps
   // currentUser is from redux state below
   const { authUser, errors, removeError, currentUser } = props;
+  const WithAuthMessageForm = withAuth(MessageForm);
   return (
     <div className='container'>
       <Switch>
@@ -49,13 +50,28 @@ const Main = props => {
         <Route 
           exact
           path='/users/:id/messages/new' 
-          component={ withAuth(MessageForm)} 
+          render={props => {
+            return(
+              <WithAuthMessageForm 
+                isEdit={false}
+                buttonText='New Squack'
+                {...props} 
+              />
+            )
+          }}
         />
-        {/* Unclear on how to pass props to a component wrapped in a HOC */}
         <Route 
           exact
           path='/users/:id/messages/:message_id/edit' 
-          component={ withAuth(MessageForm)} 
+          render={props => {
+            return(
+              <WithAuthMessageForm 
+                isEdit={true}
+                buttonText='Update Squack!'
+                {...props} 
+              />
+            )
+          }}
         />
       </Switch>
     </div>

@@ -43,7 +43,7 @@ export const updateMessage = (user_id, message_id, text) => {
     // make a put request to message
     return apiCall('put', `/api/users/${user_id}/messages/${message_id}`, { text })
       // after upsate the message in state
-      .then(() => {})
+      .then(res => {})
       .catch(err => dispatch(addError(err.message)));
   }
 }

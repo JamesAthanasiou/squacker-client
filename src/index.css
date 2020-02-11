@@ -86,4 +86,10 @@ ul.nav.navbar-nav li {
 a.btn.btn-danger,
 a.btn.btn-danger:hover {
   color: white;
+  margin-left: 5px;
+}
+
+.btn-warning,
+.btn-warning:hover {
+  color: white;
 }
